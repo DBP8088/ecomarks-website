@@ -1,41 +1,39 @@
-// Wait until the DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Navigation pop-up
-  const menuIcon = document.getElementById('menuIcon');
-  const popupNav = document.getElementById('popupNav');
-  const closeBtn = document.getElementById('closeBtn');
+// Wait for the DOM to load before running the scripts
+document.addEventListener("DOMContentLoaded", function() {
+  // Side Navigation Logic
+  const hamburger = document.getElementById("hamburger");
+  const sideNav = document.getElementById("sideNav");
+  const closeNav = document.getElementById("closeNav");
 
-  menuIcon.addEventListener('click', function() {
-    popupNav.style.display = 'flex';
+  hamburger.addEventListener("click", () => {
+    sideNav.style.left = "0";
   });
 
-  closeBtn.addEventListener('click', function() {
-    popupNav.style.display = 'none';
+  closeNav.addEventListener("click", () => {
+    sideNav.style.left = "-250px";
   });
 
-  // Modal for product details
-  const productModal = document.getElementById('productModal');
-  const closeModalBtn = document.getElementById('closeModal');
-
-  closeModalBtn.addEventListener('click', function() {
-    productModal.style.display = 'none';
+  // CTA Button: Smooth scroll to Products section
+  document.getElementById("ctaBtn").addEventListener("click", () => {
+    document.querySelector(".products").scrollIntoView({ behavior: "smooth" });
   });
 
-  // Also allow closing the modal by clicking outside the content
-  window.addEventListener('click', function(e) {
-    if (e.target === productModal) {
-      productModal.style.display = 'none';
+  // Modal: Close when clicking on the close button or clicking outside the modal content
+  const modal = document.getElementById("modal");
+  const closeModal = document.getElementById("closeModal");
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
     }
   });
 });
 
-// Function to display a popup modal with product information
-function popupProduct(title, description) {
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDesc = document.getElementById('modalDesc');
-  const productModal = document.getElementById('productModal');
-
-  modalTitle.textContent = title;
-  modalDesc.textContent = description;
-  productModal.style.display = 'flex';
+// Function to open modal with dynamic product details
+function openModal(title, description) {
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalDesc").textContent = description;
+  document.getElementById("modal").style.display = "flex";
 }
