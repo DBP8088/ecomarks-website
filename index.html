@@ -1,81 +1,74 @@
-<link rel="stylesheet" href="assets/styles.css">
-<script src="assets/script.js" defer></script>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>EcoMarks – Utility Marking Solutions</title>
+  <title>EcoMarks – Interactive Utility Marking Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav>
+  <!-- Header with Logo & Menu Icon -->
+  <header>
     <div class="logo">EcoMarks</div>
-    <ul class="nav-links">
+    <div class="menu-icon" id="menuIcon">&#9776;</div>
+  </header>
+  
+  <!-- Popup Navigation Overlay -->
+  <nav id="popupNav" class="popup-nav">
+    <div class="close-btn" id="closeBtn">&times;</div>
+    <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="products.html">Products</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-
+  
   <!-- Hero Section -->
-  <header class="hero">
+  <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>EcoMarks</h1>
-      <p>Smart & Sustainable Utility Marking Solutions</p>
-      <button onclick="showPopup()">Learn More</button>
+      <p>Smart &amp; Sustainable Utility Marking Solutions</p>
+      <button id="exploreBtn" class="cta-btn">Explore Our Products</button>
     </div>
-  </header>
-
-  <!-- About Preview -->
-  <section class="about-preview">
-    <h2>Who We Are</h2>
-    <p>EcoMarks is the leader in durable, environmentally-friendly marking products for utility safety.</p>
-    <a href="about.html" class="cta-btn">Explore More</a>
   </section>
-
-  <!-- Featured Products -->
-  <section class="products-preview">
+  
+  <!-- Products Section with Interactive Cards -->
+  <section class="products-section">
     <h2>Featured Products</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://source.unsplash.com/800x600/?utility,tape" alt="Utility Marking Tape">
+    <div class="products-grid">
+      <div class="product-card" onclick="popupProduct('Marking Tapes', 'Durable, eco-friendly tapes designed to meet utility safety standards.')">
+        <img src="https://source.unsplash.com/400x300/?tape,industrial" alt="Utility Marking Tapes">
         <h3>Marking Tapes</h3>
-        <p>Durable, eco-friendly safety tapes engineered for extreme conditions.</p>
       </div>
-      <div class="product-card">
-        <img src="https://source.unsplash.com/800x600/?flag,construction" alt="Safety Flags">
+      <div class="product-card" onclick="popupProduct('Safety Flags', 'High-visibility flags to secure construction and utility areas.')">
+        <img src="https://source.unsplash.com/400x300/?flag,construction" alt="Safety Flags">
         <h3>Safety Flags</h3>
-        <p>High-visibility marking flags designed for industrial and municipal applications.</p>
       </div>
-      <div class="product-card">
-        <img src="https://source.unsplash.com/800x600/?sign,warning" alt="Vinyl Signage">
-        <h3>Vinyl Signage</h3>
-        <p>Long-lasting adhesive signs for construction and underground utilities.</p>
+      <div class="product-card" onclick="popupProduct('Vinyl Signs', 'Adhesive vinyl signs built for longevity and performance.')">
+        <img src="https://source.unsplash.com/400x300/?sign,warning" alt="Vinyl Signs">
+        <h3>Vinyl Signs</h3>
       </div>
     </div>
-    <a href="products.html" class="cta-btn">View Full Catalog</a>
   </section>
-
-  <!-- Popup Modal -->
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <h2>About EcoMarks</h2>
-      <p>Our products are made with advanced eco-friendly materials, engineered for reliability and safety.</p>
-      <button onclick="closePopup()">Close</button>
+  
+  <!-- Modal Popup for Product Details -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeModal">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
     </div>
   </div>
-
+  
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 EcoMarks. All Rights Reserved.</p>
   </footer>
-
+  
+  <!-- Link to the JavaScript file -->
+  <script src="script.js"></script>
 </body>
 </html>
