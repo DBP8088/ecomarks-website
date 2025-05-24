@@ -8,66 +8,64 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header with Logo & Menu Icon -->
+  <!-- Fixed Header with Logo & Hamburger Button -->
   <header>
     <div class="logo">EcoMarks</div>
-    <div class="menu-icon" id="menuIcon">&#9776;</div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
   </header>
-  
-  <!-- Popup Navigation Overlay -->
-  <nav id="popupNav" class="popup-nav">
-    <div class="close-btn" id="closeBtn">&times;</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  
-  <!-- Hero Section -->
+
+  <!-- Sliding Side Navigation (Pop-up) -->
+  <div id="sideNav" class="side-nav">
+    <span class="closebtn" id="closeNav">&times;</span>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Hero Section with Animated Background -->
   <section class="hero">
-    <div class="hero-overlay"></div>
+    <div class="hero-bg"></div>
     <div class="hero-content">
       <h1>EcoMarks</h1>
       <p>Smart &amp; Sustainable Utility Marking Solutions</p>
-      <button id="exploreBtn" class="cta-btn">Explore Our Products</button>
+      <button id="ctaBtn" class="cta-btn">Explore Our Products</button>
     </div>
   </section>
-  
-  <!-- Products Section with Interactive Cards -->
-  <section class="products-section">
+
+  <!-- Products Section: Interactive Product Cards -->
+  <section class="products">
     <h2>Featured Products</h2>
-    <div class="products-grid">
-      <div class="product-card" onclick="popupProduct('Marking Tapes', 'Durable, eco-friendly tapes designed to meet utility safety standards.')">
-        <img src="https://source.unsplash.com/400x300/?tape,industrial" alt="Utility Marking Tapes">
+    <div class="products-container">
+      <div class="product-card" onclick="openModal('Marking Tapes', 'Our eco‑friendly marking tapes are engineered for durability and safety.')">
+        <img src="https://source.unsplash.com/400x300/?tape,industrial" alt="Marking Tapes">
         <h3>Marking Tapes</h3>
       </div>
-      <div class="product-card" onclick="popupProduct('Safety Flags', 'High-visibility flags to secure construction and utility areas.')">
+      <div class="product-card" onclick="openModal('Safety Flags', 'High‑visibility flags crafted to secure construction and utility areas.')">
         <img src="https://source.unsplash.com/400x300/?flag,construction" alt="Safety Flags">
         <h3>Safety Flags</h3>
       </div>
-      <div class="product-card" onclick="popupProduct('Vinyl Signs', 'Adhesive vinyl signs built for longevity and performance.')">
+      <div class="product-card" onclick="openModal('Vinyl Signs', 'Adhesive vinyl signs that blend longevity with clear, effective communication.')">
         <img src="https://source.unsplash.com/400x300/?sign,warning" alt="Vinyl Signs">
         <h3>Vinyl Signs</h3>
       </div>
     </div>
   </section>
-  
+
   <!-- Modal Popup for Product Details -->
-  <div id="productModal" class="modal">
+  <div id="modal" class="modal">
     <div class="modal-content">
-      <span class="close-modal" id="closeModal">&times;</span>
-      <h2 id="modalTitle"></h2>
-      <p id="modalDesc"></p>
+      <span class="modal-close" id="closeModal">&times;</span>
+      <h2 id="modalTitle">Product Title</h2>
+      <p id="modalDesc">Product Description</p>
     </div>
   </div>
-  
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 EcoMarks. All Rights Reserved.</p>
   </footer>
-  
+
   <!-- Link to the JavaScript file -->
   <script src="script.js"></script>
 </body>
