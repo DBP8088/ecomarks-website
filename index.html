@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>EcoMarks – Interactive Utility Marking Solutions</title>
+  <title>EcoMarks – Smart &amp; Sustainable Utility Marking Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Link to the CSS file -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Fixed Header with Logo & Hamburger Button -->
+  <!-- Fixed Header -->
   <header>
     <div class="logo">EcoMarks</div>
     <div class="hamburger" id="hamburger">&#9776;</div>
   </header>
 
-  <!-- Sliding Side Navigation (Pop-up) -->
+  <!-- Sliding Side Navigation -->
   <div id="sideNav" class="side-nav">
     <span class="closebtn" id="closeNav">&times;</span>
     <a href="index.html">Home</a>
@@ -28,24 +28,34 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <h1>EcoMarks</h1>
-      <p>Smart &amp; Sustainable Utility Marking Solutions</p>
+      <p>Transforming Utility Safety with Eco-friendly, Innovative Marking Solutions</p>
+      <p>Our products deliver unparalleled durability and sustainability, ensuring your utilities are clearly marked and protected.</p>
       <button id="ctaBtn" class="cta-btn">Explore Our Products</button>
     </div>
   </section>
 
-  <!-- Products Section: Interactive Product Cards -->
+  <!-- About Section with Company Story -->
+  <section class="about">
+    <div class="container">
+      <h2>About EcoMarks</h2>
+      <p>Founded with a vision to combine safety and sustainability, EcoMarks is at the forefront of utility marking innovation. Our products are engineered from eco-friendly materials and rigorously tested to meet the highest standards of durability and performance.</p>
+      <p>We're dedicated to keeping our infrastructure safe while minimizing environmental impact. Join us on our journey to redefine utility safety for a greener tomorrow.</p>
+    </div>
+  </section>
+
+  <!-- Products Section with Detailed Product Information -->
   <section class="products">
     <h2>Featured Products</h2>
     <div class="products-container">
-      <div class="product-card" onclick="openModal('Marking Tapes', 'Our eco‑friendly marking tapes are engineered for durability and safety.')">
+      <div class="product-card" onclick="openModal('Marking Tapes', 'Our eco-friendly marking tapes are designed for durability. Manufactured from recycled and UV-resistant materials, they secure underground utilities and road works with superior performance.')">
         <img src="https://source.unsplash.com/400x300/?tape,industrial" alt="Marking Tapes">
         <h3>Marking Tapes</h3>
       </div>
-      <div class="product-card" onclick="openModal('Safety Flags', 'High‑visibility flags crafted to secure construction and utility areas.')">
+      <div class="product-card" onclick="openModal('Safety Flags', 'Designed for maximum visibility, our safety flags help delineate hazardous areas. Ideal for both construction and utility sites, they are available in various sizes and colors.')">
         <img src="https://source.unsplash.com/400x300/?flag,construction" alt="Safety Flags">
         <h3>Safety Flags</h3>
       </div>
-      <div class="product-card" onclick="openModal('Vinyl Signs', 'Adhesive vinyl signs that blend longevity with clear, effective communication.')">
+      <div class="product-card" onclick="openModal('Vinyl Signs', 'Our adhesive vinyl signs offer quick installation and exceptional longevity. Perfect for temporary or permanent use, they provide clear and effective communication in high-risk areas.')">
         <img src="https://source.unsplash.com/400x300/?sign,warning" alt="Vinyl Signs">
         <h3>Vinyl Signs</h3>
       </div>
