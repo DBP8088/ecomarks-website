@@ -6,8 +6,9 @@
 }
 body {
   font-family: 'Helvetica', sans-serif;
-  background-color: #f0f0f0;
+  background-color: #f7f7f7;
   color: #333;
+  line-height: 1.6;
 }
 
 /* Header */
@@ -21,21 +22,21 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 100;
 }
 .logo {
   font-size: 1.8rem;
-  font-weight: bold;
   color: #2c5f2d;
+  font-weight: bold;
 }
 .hamburger {
   font-size: 2rem;
-  cursor: pointer;
   color: #2c5f2d;
+  cursor: pointer;
 }
 
-/* Side Navigation (Pop-up) */
+/* Side Navigation (Sliding Pop-up) */
 .side-nav {
   position: fixed;
   top: 0;
@@ -50,27 +51,26 @@ header {
 .side-nav a {
   display: block;
   padding: 12px 20px;
+  color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
-  color: #fff;
   transition: color 0.3s;
 }
 .side-nav a:hover {
-  color: #f1f1f1;
+  color: #ddd;
 }
 .closebtn {
   position: absolute;
   top: 20px;
   right: 25px;
   font-size: 2rem;
-  cursor: pointer;
   color: #fff;
+  cursor: pointer;
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  width: 100%;
   height: 100vh;
   margin-top: 70px; /* offset for fixed header */
   overflow: hidden;
@@ -81,7 +81,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("https://source.unsplash.com/1600x900/?construction,utility") no-repeat center center/cover;
+  background: url('https://source.unsplash.com/1600x900/?construction,utility') no-repeat center center/cover;
   animation: zoom 20s infinite alternate;
 }
 @keyframes zoom {
@@ -92,8 +92,8 @@ header {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 20px;
   color: #fff;
+  padding: 20px;
 }
 .hero-content h1 {
   font-size: 3.5rem;
@@ -101,8 +101,8 @@ header {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 .hero-content p {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 .cta-btn {
@@ -120,10 +120,31 @@ header {
   transform: scale(1.05);
 }
 
+/* About Section */
+.about {
+  background: #fff;
+  padding: 3rem 2rem;
+}
+.about .container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2c5f2d;
+}
+.about p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #555;
+}
+
 /* Products Section */
 .products {
   padding: 4rem 2rem;
-  background: #fff;
+  background: #fefefe;
   text-align: center;
 }
 .products h2 {
@@ -135,7 +156,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 20px;
 }
 .product-card {
   background: #f9f9f9;
@@ -147,7 +168,7 @@ header {
 }
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .product-card img {
   width: 100%;
@@ -155,11 +176,11 @@ header {
 }
 .product-card h3 {
   padding: 10px;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: #2c5f2d;
 }
 
-/* Modal Popup */
+/* Modal Popup for Product Details */
 .modal {
   display: none;
   position: fixed;
@@ -199,12 +220,19 @@ footer {
   background: #2c5f2d;
   color: #fff;
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .hero-content h1 { font-size: 2.5rem; }
-  .hero-content p { font-size: 1.2rem; }
-  .products-container { flex-direction: column; align-items: center; }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
